@@ -5,16 +5,16 @@ class Solution {
         for(int i=0 ; i<=nums.length-3 ; i++){
             if(i==0 || nums[i]!=nums[i-1]){
                 int left=i+1,right=nums.length-1;
-                int target = 0-nums[i];
+                int target =-nums[i];
                 while(left<right){
                     if(nums[left]+nums[right]==target){
-                    List<Integer> ansList=new ArrayList<>();
-                    ansList.add(nums[i]);
-                    ansList.add(nums[left]);
-                    ansList.add(nums[right]);
-                    triplets.add(ansList);
-                    while(left < nums.length-1 && nums[left]==nums[left+1])left++;
-                    while(right>0 && nums[right]==nums[right-1])right--;
+                    // List<Integer> ansList=new ArrayList<>();
+                    // ansList.add(nums[i]);
+                    // ansList.add(nums[left]);
+                    // ansList.add(nums[right]);
+                    triplets.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while(left < right && nums[left]==nums[left+1])left++;
+                    while(left < right && nums[right]==nums[right-1])right--;
                     left++;
                     right--;
                     }else if(nums[left]+nums[right]<target){
