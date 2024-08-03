@@ -8,10 +8,6 @@ class Solution {
                 int target =-nums[i];
                 while(left<right){
                     if(nums[left]+nums[right]==target){
-                    // List<Integer> ansList=new ArrayList<>();
-                    // ansList.add(nums[i]);
-                    // ansList.add(nums[left]);
-                    // ansList.add(nums[right]);
                     triplets.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     while(left < right && nums[left]==nums[left+1])left++;
                     while(left < right && nums[right]==nums[right-1])right--;
